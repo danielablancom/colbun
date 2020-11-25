@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Temas from './Components/Temas/Temas';
 
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
+          <div> <Temas /> </div> 
         <a
           className="App-link"
           href="https://reactjs.org"
