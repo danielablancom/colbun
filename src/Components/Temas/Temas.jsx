@@ -1,12 +1,11 @@
 import React, { Fragment } from 'react'; 
-import Temas from '../Temas/Temas.css';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+// import Temas from '../Temas/Temas.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Temas = () => {
 	return (
 	<Fragment>
 	
-
 <div className="select">     
 	<select>
 		<option value=""></option>
