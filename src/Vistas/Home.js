@@ -14,7 +14,7 @@ import './Home.css'
 function Home () { 
 
     return (
-           
+        
 <section className="animsition">
     <div className="page-wrapper">       
         <div className="page-container">           
