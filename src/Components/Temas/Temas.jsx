@@ -55,23 +55,18 @@ const Temas = () => {
 
       <div className="select">
         <select>
-          <option value=""></option>
           <option value="temas">Temas</option>
         </select>
         <select>
-          <option value=""></option>
           <option value="tipos entregables">Tipos entregables</option>
         </select>
         <select>
-          <option value=""></option>
           <option value="areas">Áreas</option>
         </select>
         <select>
-          <option value=""></option>
           <option value="tipos de opciones">Tipos de opciones</option>
         </select>
         <select>
-          <option value=""></option>
           <option value="nivel autorizacion">Nivel autorización</option>
         </select>
       </div>
@@ -84,7 +79,7 @@ const Temas = () => {
             <th scope="col">Tema</th>
             <th scope="col">Area cliente</th>
             <th scope="col">Area relacionada</th>
-            <th scope="col">Opciones</th>
+            <th scope="col">Responsable</th>
           </tr>
         </thead>
         <tbody>
