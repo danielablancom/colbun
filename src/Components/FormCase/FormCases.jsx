@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { firebase } from '../../firebase'; 
+// import { firebase } from '../../firebase'; 
 import PrincipalLogo from "../Logo";
 import "./FormCases.css";
 import SearcherBar from "../FormCase/SearcherBar";
@@ -15,33 +15,33 @@ const FormCases = () => {
   const  [selectOption3, setSelect3] = useState("")
   const  [selectOption4, setSelect4] = useState("")
 
-  const sendToFirebase = async (e) => {
-    e.preventDefault();
+  // const sendToFirebase = async (e) => {
+  //   e.preventDefault();
 
-    try {
+  //   try {
 
-        const db = firebase.firestore();
-        console.log(db)
-        let peticion = selectOption1.map(options => {
-            return (
-                options.reduce((result, item) => {
-                    return `${result}${item}`
-                })
-            )
-        })
-       console.log(peticion)
-        const options = {
-            Fecha: Date.now(),
-            Nombre: peticion,
-            AreaC: selectOption1
+  //       const db = firebase.firestore();
+  //       console.log(db)
+  //       let peticion = selectOption1.map(options => {
+  //           return (
+  //               options.reduce((result, item) => {
+  //                   return `${result}${item}`
+  //               })
+  //           )
+  //       })
+  //      console.log(peticion)
+  //       const options = {
+  //           Fecha: Date.now(),
+  //           Nombre: peticion,
+  //           AreaC: selectOption1
             
-        };
-        console.log(options);
-        await db.collection('AreaC').add(options);
+  //       };
+  //       console.log(options);
+  //       await db.collection('AreaC').add(options);
 
-    } catch (error) {
-        console.log(error);
-    }
+  //   } catch (error) {
+  //       console.log(error);
+  //   }
 
   return (
     <Fragment>
@@ -149,13 +149,12 @@ const FormCases = () => {
             </select>
           </div>
 
-          <button as="input" size="lg" type="submit" variant="success" value="Crear" onClick = {sendToFirebase} />
+          <button as="input" size="lg" type="submit" variant="success" value="Crear" />
 
         </form>
       </div>
     </Fragment>
   );
-}
 }
 
 export default FormCases;
