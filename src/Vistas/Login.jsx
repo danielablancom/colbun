@@ -1,14 +1,32 @@
 import React from 'react';
-import logo from '../img/logo-blanco.svg';
+import logoCol from '../img/logo-colbun.jpg';
+import logoFen from '../img/logo-fenix.png';
 import './Login.css'
+import { Link } from 'react-router-dom';
+import firebase from 'firebase/app';
+import { auth } from '../firebase'
 
 function Login () {
+
+	const provider = new firebase.auth.OAuthProvider('microsoft.com');
+	provider.addScope('User.Read');
+  
+	const microsoftLogin = (prov) => firebase.auth().signInWithPopup(prov).then(function(result) {
+		//localStorage.setItem('token', result.credential.accessToken);
+		console.log(result.credential.accessToken);
+	  })
+		.catch(function(error) {
+		  console.log(error);
+		});
+
 
   return (
     <div className="limiter">
 		<div className="container-login100">
 			<div className="wrap-login100">
+			
 				<form className="login100-form validate-form">
+				<div className="logos" align="center"><img src={logoCol} width="100"/> <img src={logoFen} width="100"/></div>
 					<span className="login100-form-title p-b-34">
 						Iniciar sesión
 					</span>
@@ -23,14 +41,15 @@ function Login () {
 					</div>
 					
 					<div className="container-login100-form-btn">
-						<button className="login100-form-btn">
-							Iniciar sesión
+						
+					<button className="login100-form-btn">
+					<Link to="/home">	Iniciar sesión </Link>
 						</button>
 					</div>
 
 					<div className="login-form-btn">
-						<button className="login-gmail">
-							Ingresar con gmail
+						<button className="login-gmail" onClick={() => microsoftLogin(provider)}>
+							Ingresar con outlook
 						</button>
 					</div>
 
@@ -40,7 +59,7 @@ function Login () {
 						</span>
 
 						<a href="#" className="txt2">
-							mi contraseña
+						mi contraseña
 						</a>
 					</div>
 
@@ -51,8 +70,7 @@ function Login () {
 					</div>
 				</form>
 
-				<div className="login100-more">
-				<img src={logo} />
+				<div className="login100-more">				
 			</div>
 		</div>
 	</div>

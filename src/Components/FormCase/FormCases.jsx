@@ -1,15 +1,19 @@
 import React, { Fragment } from "react";
 import { useForm } from "react-hook-form";
 //import { firebase } from '../../firebase';
-// import { Link } from 'react-router-dom';
-import PrincipalLogo from "../Logo";
+import { Link } from 'react-router-dom';
+//import PrincipalLogo from "../Logo";
 import "./FormCases.css";
-import SearcherBar from "../FormCase/SearcherBar";
+//import SearcherBar from "../FormCase/SearcherBar";
 // npm install --save-dev @iconify/react @iconify-icons/bi
 import { Icon } from "@iconify/react";
 import plusIcon from "@iconify-icons/bi/plus";
 import TableCase from "../Opinion/TableCase";
 // import Button from "react-bootstrap/Button";
+//Components
+import NavBar from "../Menu/Menu";
+import logo from "../../img/logo.png";
+//import avatar from "../../img/Home/avatar-01.png";
 
 const FormCases = () => {
 
@@ -55,10 +59,23 @@ const FormCases = () => {
   
   return (
     <Fragment>
-      <PrincipalLogo />
-      <SearcherBar />
-
-      <div>
+    
+      <header className="header-desktop">
+            <NavBar></NavBar>
+            <div className="logo">              
+                <img src={logo} />              
+            </div>
+            <div className="section__content section__content--p30">
+              <div className="container-fluid">
+                <div className="header-wrap">
+                 
+              
+                </div>
+              </div>
+            </div>
+          </header>
+    
+         <div>
         <p class="text">
           <Icon icon={plusIcon} />
           Ingresa un nuevo caso
@@ -142,12 +159,12 @@ const FormCases = () => {
               <option selected>Temas relacionados</option>
             </select>
           </div>
-          {/* <Link to="/opiniones">  */}
+          {/* <Link to="/opiniones">   */}
           {/* <Button as="input" size="lg" type="submit" variant="success" value="Crear Caso"/> */}
           {/* </Link> */}
-              {/* <Link to="/opiniones">  */}
-                 <input class="btn" type="submit" value="Crear caso" />
-                 {/* </Link> */}
+              <Link to="/opiniones"> 
+                 <input className="btn" type="submit" value="Crear caso" />
+                </Link>
         </form>
       </div>
     </Fragment>

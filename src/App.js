@@ -6,25 +6,20 @@ import FormCases from "./Components/FormCase/FormCases";
 import Opinion from "./Components/Opinion/Opinion"; 
 import TemplateResults from './Components/Results/TemplateResults';
 
+/*Vistas*/
+import Login from './Vistas/Login';
+import Home from './Vistas/Home';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Route path="/" exact>
-          <FormCases />
+          <Login />
         </Route>
 
-        <Route path="/opiniones">
-          <Opinion />
-        </Route>
-
-        <Route path="/detallecasos">
-          <TemplateResults /> 
-        </Route>
-{/* 
-         <Route path="/home">
-          <Home /><Menu />
+        <Route path="/home">
+          <Home/>
         </Route>
 
         <Route path="/casos">
@@ -33,7 +28,11 @@ function App() {
 
         <Route path="/opiniones">
           <Opinion />
-        </Route> */}
+        </Route>
+
+        <Route path="/detallecasos">
+          <TemplateResults />
+        </Route> 
 
      
       </Switch>
